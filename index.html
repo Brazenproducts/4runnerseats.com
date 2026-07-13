@@ -114,7 +114,11 @@ ul{padding-left:1.2rem}
 .disclosure{max-width:var(--max);margin:0 auto;font-size:.78rem;color:#6a906c;padding:4px 20px 28px}
 
 @media(max-width:900px){.layout{grid-template-columns:1fr}.wok-body{flex-direction:column}.pc-body{flex-direction:column}.pc-body img{width:100%;height:180px}.pros-cons{grid-template-columns:1fr}}
-@media(max-width:600px){.hdr-inner{flex-direction:column;align-items:flex-start}.main-nav ul{gap:10px}}</style>
+@media(max-width:600px){.hdr-inner{flex-direction:column;align-items:flex-start}.main-nav ul{gap:10px}}
+.pc-toggle{display:block;width:100%;margin-top:10px;background:none;border:1px solid var(--border);border-radius:8px;padding:7px 14px;font-size:.88rem;font-weight:700;color:var(--muted);cursor:pointer;text-align:left}
+.pc-toggle:hover{background:rgba(255,255,255,.05)}
+.pc-body.collapsed{display:none}
+</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does Wet Okole make 4Runner seat covers?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Wet Okole makes custom neoprene covers specifically for the 4Runner, sold direct at wetokole.com. They are the top premium neoprene option \u2014 no Amazon middleman."}}, {"@type": "Question", "name": "What years does the 5th gen 4Runner cover?", "acceptedAnswer": {"@type": "Answer", "text": "The 5th generation 4Runner ran from 2010 to 2023. It has by far the most aftermarket seat cover options of any 4Runner generation."}}, {"@type": "Question", "name": "Are 4Runner and Tacoma seat covers interchangeable?", "acceptedAnswer": {"@type": "Answer", "text": "No. Different seat shapes, different rear configurations. Always check that the product specifically lists the 4Runner, not just 'Toyota truck.'"}}, {"@type": "Question", "name": "What material is best for a 4Runner that goes off-road?", "acceptedAnswer": {"@type": "Answer", "text": "Neoprene is the best trail material \u2014 it handles mud, water, and sweat well and dries fast. Wet Okole neoprene (direct) is the premium pick. coverdream offers a waterproof option on Amazon at a lower price."}}, {"@type": "Question", "name": "Does the 4Runner have side airbags in the seats?", "acceptedAnswer": {"@type": "Answer", "text": "The 5th gen 4Runner does have side-curtain airbags but seat-mounted side airbags depend on trim level. Check your specific trim before purchasing."}}]}</script>
 </head>
 <body>
@@ -169,7 +173,8 @@ ul{padding-left:1.2rem}
     <div class="pc-stars">★★★★★ 4.6/5</div>
   </div>
 </div>
-<div class="pc-body">
+<button class="pc-toggle">Read full review ▼</button>
+<div class="pc-body collapsed">
   <img src="https://m.media-amazon.com/images/I/81NfYMEFocL._AC_SL1500_.jpg" alt="FREESOO 4Runner Seat Covers — Full Set, 5 Seats" loading="lazy">
   <div class="pc-text">
     <div class="pc-price">$249.99</div>
@@ -187,7 +192,8 @@ ul{padding-left:1.2rem}
     <div class="pc-stars">★★★★★ 4.5/5</div>
   </div>
 </div>
-<div class="pc-body">
+<button class="pc-toggle">Read full review ▼</button>
+<div class="pc-body collapsed">
   <img src="https://m.media-amazon.com/images/I/71mW5cWuZGL._AC_SL1500_.jpg" alt="coverdream Waterproof Seat Covers — 2010–2024" loading="lazy">
   <div class="pc-text">
     <div class="pc-price">$199.99</div>
@@ -205,7 +211,8 @@ ul{padding-left:1.2rem}
     <div class="pc-stars">★★★★★ 4.4/5</div>
   </div>
 </div>
-<div class="pc-body">
+<button class="pc-toggle">Read full review ▼</button>
+<div class="pc-body collapsed">
   <img src="https://m.media-amazon.com/images/I/8165cA-5K5L._AC_SL1500_.jpg" alt="AOMSAZTO Custom Fit Seat Covers — Full Set" loading="lazy">
   <div class="pc-text">
     <div class="pc-price">$199.99</div>
@@ -223,7 +230,8 @@ ul{padding-left:1.2rem}
     <div class="pc-stars">★★★★★ 4.3/5</div>
   </div>
 </div>
-<div class="pc-body">
+<button class="pc-toggle">Read full review ▼</button>
+<div class="pc-body collapsed">
   <img src="https://m.media-amazon.com/images/I/71YoDz-IHML._AC_SL1500_.jpg" alt="BAMACAR 15-Piece Full Set — Budget Pick" loading="lazy">
   <div class="pc-text">
     <div class="pc-price">$169.99</div>
@@ -297,5 +305,15 @@ ul{padding-left:1.2rem}
     <strong>Affiliate Disclosure:</strong> As an Amazon Associate we earn from qualifying purchases. Wet Okole links go direct with no affiliate arrangement.
   </div>
 </footer>
+<script>
+document.querySelectorAll('.pc-toggle').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var body=this.nextElementSibling;
+    var open=!body.classList.contains('collapsed');
+    body.classList.toggle('collapsed',open);
+    this.textContent=open?'Read full review ▼':'Collapse ▲';
+  });
+});
+</script>
 </body>
 </html>
